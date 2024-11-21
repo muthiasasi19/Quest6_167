@@ -155,6 +155,21 @@ fun TampilView(
                         fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
                         fontSize = 14.sp
                     )
+
+                    Row {
+                        Text(
+                            text = "Kelas:",
+                            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                            fontSize = 14.sp
+                        )
+                        Text(
+                            text = krs.kelas,
+                            fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
+                            fontSize = 14.sp
+                        )
+                    }
+                }
+
             }
 
         }
