@@ -16,7 +16,9 @@ import com.example.navigationcompose.ui.view.viewmodel.MahasiswaViewModel
 
 enum class Halaman {
     Splash,
-    Mahasiswa
+    Mahasiswa,
+    Peminatan,
+    TampilKrs
 }
 
 @Composable
@@ -62,8 +64,19 @@ fun MahasiswaApp(
                     navController.popBackStack()
                 }
             )
+        }
 
-
+        composable(route = Halaman.TampilKrs.name) {
+            TampilView(
+                mahasiswa = mahasiswaUiState,
+                krs = rencanaStudiUiState,
+                onbackbuttonClicked = {
+                    navController.popBackStack()
+                },
+                onResetButtonClicked = {
+                    navController.navigate(Halaman.Splash.name)
+                }
+            )
         }
     }
 }
