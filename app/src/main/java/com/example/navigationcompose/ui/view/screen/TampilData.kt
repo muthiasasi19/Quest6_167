@@ -134,7 +134,11 @@ fun TampilView(
                             fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
                             fontSize = 14.sp
                         )
-
+                        Text(
+                            text = mahasiswa.email,
+                            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                            fontSize = 14.sp
+                        )
 
                     }
                 }
