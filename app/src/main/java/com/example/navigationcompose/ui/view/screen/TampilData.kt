@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -167,6 +168,22 @@ fun TampilView(
                             fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
                             fontSize = 14.sp
                         )
+                    }
+                }
+                Spacer(modifier = Modifier.padding(16.dp))
+
+                Row (
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    Button(onClick = { onbackbuttonClicked() }) {
+                        Text(text = "Kembali")
+                    }
+
+                    Button(onClick = {
+                        onResetButtonClicked()
+                    }) {
+                        Text(text = "Reset")
                     }
                 }
 
