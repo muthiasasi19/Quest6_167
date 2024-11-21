@@ -75,7 +75,69 @@ fun TampilView(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
+                Image(
+                    painter = painterResource(id = R.drawable.umy),
+                    contentDescription = "umy",
+                    modifier = Modifier.size(45.dp)
+                )
+                Spacer(modifier = Modifier.padding(start = 16.dp))
+                Column {
+                    Text(text = "Data KRS Mahasiswa",
+                        color = Color.White,
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(text = "Universitas Muhammadiyah Yogyakarta",
+                        color = Color.White,
+                        fontWeight = FontWeight.Light
+                    )
+                }
+            }
 
+
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(Color.White)
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Column {
+                        Text(
+                            text = "Nim:",
+                            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                            fontSize = 14.sp
+                        )
+                        Text(
+                            text = mahasiswa.nim,
+                            fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
+                            fontSize = 14.sp
+                        )
+                        Text(
+                            text = "Nama:",
+                            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                            fontSize = 14.sp
+                        )
+                        Text(
+                            text = mahasiswa.nama,
+                            fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
+                            fontSize = 14.sp
+                        )
+
+
+                        Text(
+                            text = "Email:",
+                            fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+                            fontSize = 14.sp
+                        )
+
+
+                    }
+                }
             }
 
         }
