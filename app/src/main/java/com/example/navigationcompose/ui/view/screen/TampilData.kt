@@ -186,9 +186,7 @@ fun TampilView(
                         Text(text = "Reset")
                     }
                 }
-
             }
-
         }
     }
 }

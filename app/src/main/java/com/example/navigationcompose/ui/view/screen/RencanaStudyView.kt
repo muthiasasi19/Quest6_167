@@ -1,26 +1,24 @@
 package com.example.navigationcompose.ui.view.screen
 
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
-import com.example.navigationcompose.model.Mahasiswa
+import androidx.lifecycle.ViewModel
+import com.example.navigationcompose.model.RencanaStudi
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 
-@Composable
-fun RencanaStudyView(
-    mahasiswa: Mahasiswa,
-    onSubmitButton: (MuutableList<String>) -> Unit,
-    onbackbuttonClicked: () -> Unit,
-) {
-    var chosenDropdown by remember {}
-    muteableStateOf(
-        ""
-    )
+class RencanaStudyViewModel : ViewModel() {
+    private val _krsState = MutableStateFlow(RencanaStudi())
+    val krsStateUi: StateFlow<RencanaStudi> = _krsState.asStateFlow()
+
+
+    fun setMataKuliah(mkPilihan: String) {
+        _krsState.update { stateMk -> stateMk.copy(namaMK = mkPilihan) }
+    }
+
+    fun setKelas(kelasPilihan: String) {
+        _krsState.update { stateKelas -> stateKelas.copy(kelas = kelasPilihan) }
+    }
 }
 
-var checked by remember { muteableStateOf(false) }
-var pilihKelas by remember {
-    muteableStateOf("")
-}
-
-var listData: MuteableList<String> = muteableListOf(chosenDropdown,
-    pilihanKelas)
 
