@@ -156,11 +156,11 @@ fun MahasiswaFormView (
                 Row (modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly) {
 
-                    Button(onClick = {onbackButton}) {
+                    Button(onClick = {onbackButtonClicked()}) {
                         Text(text = "Kembali")
                     }
 
-                    Button(onClick = {}) {
+                    Button(onClick = {onbackButtonClicked(listData)}) {
                         Text(text = "Simpan")
                     }
                 }
