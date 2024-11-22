@@ -30,8 +30,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.navigationcompose.R
@@ -41,14 +41,14 @@ import com.example.navigationcompose.R
 fun MahasiswaFormView (
 
     onSubmitButton: (MutableList<String>) -> Unit,
+    onbackbuttonClicked: () -> Unit
+
 
 ) {
 
     var nama by remember {mutableStateOf("")}
     var nim by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
-
-
     var  listData: MutableList<String> = mutableListOf(nim, nama, email)
 
     Column (modifier = Modifier
@@ -56,8 +56,6 @@ fun MahasiswaFormView (
         .background(
             color = colorResource(id = R.color.primary)
         )
-
-
     ){
         Row (modifier = Modifier.padding(25.dp),
             verticalAlignment = Alignment.CenterVertically){
@@ -99,12 +97,14 @@ fun MahasiswaFormView (
                 Text(
                     text = "Masukkan Data Anda",
                     fontWeight = FontWeight.Bold,
+                    color = Color.Black,
                     fontSize = 19.sp
                 )
 
                 Text(
                     text = "Isi sesuai data yang Anda daftarkan",
-                    fontWeight = FontWeight.Light
+                    fontWeight = FontWeight.Light,
+                    color = Color.Black
                 )
                 Spacer(modifier = Modifier.padding(8.dp))
                 OutlinedTextField(
@@ -112,13 +112,13 @@ fun MahasiswaFormView (
                     shape = RoundedCornerShape(50.dp),
                     value = nim,
                     onValueChange = { nim = it },
-                    label = { Text(text = "Nomor Induk Mahasiswa") },
+                    label = { Text(text = "Nomor Induk Mahasiswa", color = Color.Black) },
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Filled.Info,
                             contentDescription = ""
                         )
-                    }
+                    },  textStyle = TextStyle(color = Color.Black)
                 )
 
                 Spacer(modifier = Modifier.padding(4.dp))
@@ -127,13 +127,13 @@ fun MahasiswaFormView (
                     shape = RoundedCornerShape(50.dp),
                     value = nama,
                     onValueChange = { nama = it },
-                    label = { Text(text = "Masukkan Nama Anda") },
+                    label = { Text(text = "Masukkan Nama Anda", color = Color.Black) },
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Filled.Person,
                             contentDescription = ""
                         )
-                    }
+                    },  textStyle = TextStyle(color = Color.Black)
                 )
                 Spacer(modifier = Modifier.padding(4.dp))
 
@@ -142,13 +142,13 @@ fun MahasiswaFormView (
                     shape = RoundedCornerShape(50.dp),
                     value = email,
                     onValueChange = { email = it },
-                    label = { Text(text = "Masukkan Email Anda") },
+                    label = { Text(text = "Masukkan Email Anda", color = Color.Black) },
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Filled.Email,
                             contentDescription = ""
                         )
-                    }
+                    },  textStyle = TextStyle(color = Color.Black)
                 )
 
                 Spacer(modifier = Modifier.padding(16.dp))
@@ -156,12 +156,12 @@ fun MahasiswaFormView (
                 Row (modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly) {
 
-                    Button(onClick = {onbackButtonClicked()}) {
-                        Text(text = "Kembali")
+                    Button(onClick = {onbackbuttonClicked()}) {
+                        Text(text = "Kembali", color = Color.Black)
                     }
 
-                    Button(onClick = {onbackButtonClicked(listData)}) {
-                        Text(text = "Simpan")
+                    Button(onClick = {onSubmitButton(listData)}) {
+                        Text(text = "Simpan", color = Color.Black)
                     }
                 }
             }
