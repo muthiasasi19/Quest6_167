@@ -110,13 +110,15 @@ fun RencanaStudyView(
             ) {
                 Text(
                     text = "Pilih Mata Kuliah Peminatan",
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black
                 )
 
                 Text(
                     text = "Silahkan pilih mata kuliah yang anda inginkan",
                     fontSize = 12.sp,
-                    fontWeight = FontWeight.Light
+                    fontWeight = FontWeight.Light,
+                    color = Color.Black
                 )
 
                 Spacer(modifier = Modifier.padding(8.dp))
@@ -137,7 +139,8 @@ fun RencanaStudyView(
                 Text(
                     text = "Silahkan pilih Kelas dari mata kuliah yang anda inginkan",
                     fontSize = 12.sp,
-                    fontWeight = FontWeight.Light
+                    fontWeight = FontWeight.Light,
+                    color = Color.Black
                 )
 
                 Spacer(modifier = Modifier.padding(8.dp))
@@ -160,7 +163,9 @@ fun RencanaStudyView(
                 HorizontalDivider()
                 Spacer(modifier = Modifier.padding(8.dp))
 
-                Text(text = "Klausul Persetujuan Mahasiswa", fontWeight = FontWeight.Bold)
+                Text(text = "Klausul Persetujuan Mahasiswa",
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black)
 
                 Row (verticalAlignment = Alignment.CenterVertically){
                     Checkbox(
@@ -171,6 +176,7 @@ fun RencanaStudyView(
                     Text(
                         text = "Saya Menyetujui setiap pernyataan yang ada tanpa ada paksaan dari pihak manapun.",
                         fontWeight = FontWeight.Light,
+                        color = Color.Black,
                         fontSize = 10.sp
                     )
                 }
@@ -181,13 +187,15 @@ fun RencanaStudyView(
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
                     Button(onClick = {onbackbuttonClicked()}) {
-                        Text(text = "Kembali")
+                        Text(text = "Kembali",
+                            color = Color.Black)
                     }
 
                     Button(onClick = {
                         onSubmitButton(listData)
                     }, enabled = checked) {
-                        Text(text = "Berikutnya")
+                        Text(text = "Berikutnya",
+                            color = Color.Black)
                     }
                 }
             }

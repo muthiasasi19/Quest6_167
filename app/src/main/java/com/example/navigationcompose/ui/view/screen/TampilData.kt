@@ -111,34 +111,40 @@ fun TampilView(
                         Text(
                             text = "Nim:",
                             fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
-                            fontSize = 14.sp
+                            fontSize = 14.sp,
+                            color = Color.Black
                         )
                         Text(
                             text = mahasiswa.nim,
                             fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
-                            fontSize = 14.sp
+                            fontSize = 14.sp,
+                            color = Color.Black
                         )
                         Text(
                             text = "Nama:",
                             fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
-                            fontSize = 14.sp
+                            fontSize = 14.sp,
+                            color = Color.Black
                         )
                         Text(
                             text = mahasiswa.nama,
                             fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
-                            fontSize = 14.sp
+                            fontSize = 14.sp,
+                            color = Color.Black
                         )
 
 
                         Text(
                             text = "Email:",
+                            color = Color.Black,
                             fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
                             fontSize = 14.sp
                         )
                         Text(
                             text = mahasiswa.email,
                             fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
-                            fontSize = 14.sp
+                            fontSize = 14.sp,
+                            color = Color.Black
                         )
                     }
                 }
@@ -149,24 +155,29 @@ fun TampilView(
                     Text(
                         text = "Matakuliah yang diambil:",
                         fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
-                        fontSize = 14.sp
+                        fontSize = 14.sp,
+                        color = Color.Black
                     )
                     Text(
                         text = krs.namaMK,
                         fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
-                        fontSize = 14.sp
+                        fontSize = 14.sp,
+                        color = Color.Black
                     )
 
                     Row {
                         Text(
                             text = "Kelas:",
                             fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
-                            fontSize = 14.sp
+                            fontSize = 14.sp,
+                            color = Color.Black
+
                         )
                         Text(
                             text = krs.kelas,
                             fontStyle = androidx.compose.ui.text.font.FontStyle.Italic,
-                            fontSize = 14.sp
+                            fontSize = 14.sp,
+                            color = Color.Black
                         )
                     }
                 }
@@ -177,14 +188,10 @@ fun TampilView(
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
                     Button(onClick = { onbackbuttonClicked() }) {
-                        Text(text = "Kembali")
+                        Text(text = "Kembali",
+                            color = Color.Black)
                     }
 
-                    Button(onClick = {
-                        onResetButtonClicked()
-                    }) {
-                        Text(text = "Reset")
-                    }
                 }
             }
         }
